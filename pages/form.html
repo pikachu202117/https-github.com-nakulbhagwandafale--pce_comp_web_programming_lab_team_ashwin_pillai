@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+</head>
+<body>
+
+    <h1>FEEDBACK FORM</h1>
+
+    <form  method="post" action="feedback.php">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <fieldset>
+            <legend>Type</legend>
+
+            <label>
+                <input type="radio" name="type" value="Complaint" checked>
+                Complaint
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="type" value="Suggestion">
+                Suggestion
+            </label>
+
+        </fieldset>
+
+        <label>
+            <input type="hidden" name="terms" value="0">
+            <input type="checkbox" name="terms" value="1">
+            I agree to the terms and conditions
+        </label>
+
+        <br>
+
+        <button>Send</button>
+
+    </form>
+
+</body>
+</html>
+

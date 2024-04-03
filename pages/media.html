@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <title>DIY with ADDS</title>
+    <link rel="icon" href="sgggxdyh.ico" type="image/x-icon">
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(30, 152, 112);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+   overflow: hidden;
+}
+.container{
+    color:rgb(123, 254, 75);
+    width: 700px;
+    padding: 25px 30px;
+    border-radius: 50px;
+    box-shadow: -5px 5px 14px rgb(86, 86, 86) ;
+    background-color: #f40468;
+    overflow: hidden;
+}
+.container.active{
+    height: 500px;
+}
+
+h3{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.input-box input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: transparent;
+    padding-right: 100px;
+    color: white;
+    font-size: 18px;
+    
+
+}
+
+.remember-forgot label{
+    font-size: 18px;
+}
+
+.remember-forgot a{
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.register-acc p{
+    font-size: 18px;
+}
+
+.register-acc a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.title{
+    width: 400px;
+    top: 25px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position:absolute ;
+    left: 0;
+    height: 3px;
+    width: 363px;
+    background: darkorange;
+    bottom: 0;
+    
+}
+.container form .details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;           
+}
+/*.container form .details:hover{
+background-color: pink;
+}*/
+
+.container .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.container.active .form-box.login{
+    transition: none;
+    transform: translateX(-700px);
+}
+
+
+.container .form-box.register-box{
+    position: absolute;
+    transition: none;
+    transform: translateX(900px);
+
+}
+
+.container.active .form-box.register-box{
+    transition: none;
+    transform: translateX(-80px);
+
+}
+
+form .details .input-box{
+    width: calc(100% / 2 - 20px);
+    color: rgb(19, 253, 81); 
+}
+.details .input-box input{
+   display: block;
+   font-weight: 500;
+   margin-bottom: 5px;
+   background-color:rgba(240, 255, 255, 0.69) ;
+}
+.details .input-box input{
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid darkorange;
+    padding-left:15px ;
+    font-size: 14px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transform: .5s;
+}
+
+form .gender .gtitle{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender .category{
+        display: flex;
+        width: 50%;
+        margin: 14px 0;
+        justify-content: space-between;
+}
+.gender .category label{
+    display: flex;
+    align-items: center;
+}
+.gender .category .dot{
+        height: 18px;
+        width: 18px;
+        background: gainsboro;
+        margin-right: 10px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        transition: all 0.0s ease;
+        cursor: pointer;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two
+{
+background-color: rgb(121, 250, 250);
+}
+.one:hover ,.two:hover{
+    box-shadow:0 0 5px rgb(121, 250, 250),
+    0 0 25px rgb(121, 250, 250),
+    0 0 100px rgb(121, 250, 250),
+    0 0 200px rgb(121, 250, 250);
+}
+form input[type="radio"]{
+    display: none;
+}
+.avatar {
+    position: absolute;
+	z-index: 3;
+	width: 80px;
+	height: 80px;
+	border-radius: 50px;
+	overflow: hidden;
+	top: 75px;
+	left: 740px;
+    box-shadow: 0 0 5px aqua,
+                0 0 25px aqua;
+}
+.avatar:hover{
+    box-shadow:0 0 5px aqua,
+    0 0 25px aqua,
+    0 0 100px aqua,
+    0 0 200px aqua;
+}
+
+button {
+    background-color: rgb(121, 250, 250);
+    border: none;
+    width: 500px;
+    height: 30px;
+    margin-left: 5%;
+    cursor: pointer;
+    color: aliceblue;
+    border-radius: 20px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    font-size: 29px;
+}
+button:hover{
+    box-shadow:0 0 5px rgb(121, 250, 250),
+    0 0 25px rgb(121, 250, 250),
+    0 0 100px rgb(121, 250, 250),
+    0 0 200px rgb(121, 250, 250);
+    text-shadow: #fff;
+    color:rgb(121, 250, 250);
+    background-color: aliceblue 
+}
+
+
+main {
+    transition: all 0.5s;
+    -webkit-text-stroke: 4px #d6f4f4;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 10rem;
+    text-align: center;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 10px 10px 0px #07bccc,
+      15px 15px 0px #e601c0,
+      20px 20px 0px #e9019a,
+      25px 25px 0px #f40468,
+      45px 45px 10px #482896;
+    cursor: pointer;
+  }
+  
+  main:hover {
+    font-variation-settings: "wght" 100, "ital" 0;
+    text-shadow: none;
+  }
+  @media screen and (max-width: 1300px) {
+   main{
+    font-size: 7rem;
+    -webkit-text-stroke: 2px #d6f4f4;
+    text-shadow: 6px 6px 0px #07bccc,
+    10px 10px 0px #e601c0,
+    14px 14px 0px #e9019a,
+    19px 19px 0px #f40468,
+    28px 28px 10px #482896;}
+    .container{
+        color:rgb(115, 255, 63);
+        box-shadow: -3.5px 3.5px 14px rgb(112, 112, 112) ;
+        background-color: #fd4893;
+    width: 600px;
+   }
+   body{
+    background-color: rgb(7, 255, 172);
+   }
+   button{
+    width:300px;
+    height: 25px;
+    font-size: 20px;
+    background-color: rgb(50, 248, 248);
+   }
+  }
+  @media screen and (max-width: 800px) {
+    main{
+     font-size: 4rem;
+     text-shadow: 3px 3px 0px #07bccc,
+     5px 5px 0px #e601c0,
+     8px 8px 0px #e9019a,
+     11px 11px 0px #f40468,
+     20px 20px 10px #482896;}
+     .container{
+         color:rgb(179, 248, 154);
+         box-shadow: -2px 2px 14px rgb(140, 140, 140) ;
+         background-color: #f56ba5;
+     width: 500px;
+    }
+    body{
+     background-color: rgb(56, 254, 188);
+    }
+    button{
+     width:250px;
+     height: 20px;
+     font-size: 15px;
+     background-color: rgb(19, 231, 231);
+    }
+   }
+</style>
+</head>
+
+<body>
+    <main>Diy With MANOS</main>
+   <!-- <img  class="gif1" src="diy.gif">-->
+    <!--<img  class="avatar" src="">-->
+   <div class="container">
+    <div class="form-box login">
+        <h2>LOGIN</h2>
+        <form action="checkuser.php" method="POST">
+            <div class="input-box">
+                <span class="icon"><box-icon name='window-close'></box-icon></span>
+                <h3>USERNAME:</h3>
+                <input type="text" name="username" required >
+                
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <h3>PASSWORD:</h3>
+                <input type="password" name="password" required >
+        
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" required>REMEMBER ME</label>
+                <a href="#">FORGOT PASSWORD</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+<!--            <div class="register-acc">
+                <p>Don't have an account! <a href="#">REGISTER</a></p>
+            </div>-->
+        </form>
+
+    </div>
+<!--        <div class="form-box register-box">
+        <div class="title">Welcome! Please Register YourSelf</div><br>
+        <form action="">
+            <center> <div class="details">
+                <div class="input-box">
+                    <label for="user">User Name:</label>
+                    <input type="text" id="user" name="user" placeholder="Enter your User name" >
+                </div>
+                <div class="input-box">
+                    <label for="first">First Name:</label>
+                    <input type="text" id="first" name="first" placeholder="Enter your first name">
+                </div>
+
+                <div class="input-box">
+                    <label for="last">Last Name:</label>
+                    <input type="text" id="last" name="last" placeholder="Enter your last name">
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+
+                <div class="input-box">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" placeholder="Enter your DOB" >
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" >
+                </div>
+
+                <div class="input-box">
+                    <label for="repassword">Re-type Password:</label>
+                    <input type="password" id="repassword" name="repassword" placeholder="Re-Enter your password"
+                        >
+                    <span id="pass"></span>
+                </div>
+
+                <div class="input-box">
+                    <label for="mobile">Contact:</label>
+                    <input type="text" id="mobile" name="mobile" placeholder="Enter your Mobile Number" 
+                        maxlength="10">
+                </div>
+            </div>
+
+            <div class="gender">
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">
+                <label for="gtitle">Gender:</label>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="Gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="Gender">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="button1">Register</button>
+            <div class="login-acc">
+                <p>Already Have An Account! <a href="#">LOGIN</a></p>
+            </div>
+            </center>
+        </form>      
+    </div>
+</div>-->
+<script src="../login.js"></script>
+</body>
+</html>

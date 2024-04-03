@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Help Page</title>
+    <link rel="stylesheet" href="ashstyle.css">
+ 
+</head>
+<body>
+<div class=head>
+    <center><h1>Help Page</h1></center>
+</div>
+<div>
+<center><h2>Video Tutorial</h2></center>
+</div>
+<div>
+<div class="wrapper">
+  <div id="leftsidebar">
+      <ul id="menulist">
+      <li class="menuitem"><a href='create.html'>Go Back</a></li>
+      <li class="menuitem"><a href='create.html'>Your Dashboard</a></li>
+    </ul>
+       <button id=btn1 onclick="getLocation()">Get Your Location</button>
+  </div>
+
+<center>
+<video width="920" height="480" controls class=main>
+	<source src="./help.mp4" type="video/mp4">
+	<track kind="subtitles" src="./English.vtt" srclang="en" label="English" default>
+</video></center>
+</div>
+
+<footer class=foot>
+    <center>
+    <p id="demo"></p>
+    <p>&copy; 2024 ADDS. All rights reserved.</p></center>
+</footer>
+    <script>
+	var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+}
+    </script>
+</body>
+</html>

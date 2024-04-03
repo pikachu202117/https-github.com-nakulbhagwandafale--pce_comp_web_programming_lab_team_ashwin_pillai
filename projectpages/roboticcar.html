@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="projectpage11.css">
+</head>
+<body>
+<nav>
+  <a href="#">PROJECTS</a>
+  <span id="void"></span>
+  <a href="#">SERVICES</a>
+  <a href="#">CONTACT</a>
+  <a href="#">ABOUT US</a>
+  <a href="#">POLICIES</a>
+</nav>
+<section id="info">
+  <div class="content"><center><h1>Controlling A Robotic Car Through MATLAB GUI</h1></center></div><br /><br /><br /><br />
+  	<img src="../img/car1.jpg">
+  	<p>This project presents the implementation of a MATLAB based graphical user interface (GUI) to control the movement of a robotic car. The commands to move the car in forward, reverse, right and left directions are sent from the GUI and processed by Arduino Uno board mounted on top of the car. Authors’ prototype is shown in Fig.</p>
+  	<img src="../img/car2.jpg">
+  	<h1>Circuit and working</h1>
+	<p>In this project, MATLAB based GUI communicates with Arduino through a USB data cable. You can send commands to Arduino to move the car in a specific direction by pressing the corresponding push button in the GUI. The particular push button, when pressed, executes callback function corresponding to that push button in the MATLAB program, car.m. Within that function, instructions to set/reset the digital I/O pins (10, 11, 12 and 13) of Arduino are executed to drive the car in the desired direction.</p>
+	<img src="../img/car3.jpg">
+	<p>Block and circuit diagrams for controlling the robot are shown in Figs 2 and 3, respectively.</p>
+	<p>Arduino Uno board. Arduino Uno is an AVR ATmega328P microcontroller (MCU) based development board with six analogue input pins and 14 digital I/O pins. The MCU has 32kB of ISP flash memory, 2kB SRAM and 1kB EEPROM. The board provides serial communication capability via UART, SPI and I2C. The MCU can operate at a clock frequency of 16MHz. In this project, digital I/O pins 10, 11, 12 and 13 of Arduino are configured as output pins.</p>
+	<p>L293D IC. This is a dual H-Bridge high-current motor driver IC. This IC is used since the digital pins of Arduino Uno cannot source enough current to drive the motors of the robotic car. H-bridges are also useful in controlling the direction of rotation of a motor. Enable pins (pins 1 and 9) of the IC being active high are connected to 9V.</p>
+	<p>Four input pins IN1, IN2, IN3 and IN4 of L293D have been connected to digital I/O pins 10, 11, 12 and 13, respectively, of Arduino. Four output pins (OUT1, OUT2, OUT3 and OUT4) of the IC are connected to the two motors (M1 and M2) with their terminals marked as A, B, C and D, respectively.</p>
+	<h1>Software program</h1>
+	<p>Circuit operation is performed using the software program loaded into the internal memory of Arduino board. The program implements all required functionalities including user inputs through MATLAB GUI interface. The steps are listed below:</p>
+	<ol>
+		<li>Arduino IDE 1.6.5 is used for programming Arduino Uno. The latest IDE can be downloaded for free from Arduino’s official website. After downloading Arduino IDE, install it. Note the directory of Arduino IDE installation.</li>
+		<li> Download Legacy MATLAB and Simulink Support for Arduino package from MathWorks website. Extract the compressed folder named ArduinoIO. From this folder, copy pde folder and paste it in C:\Program Files (or Program files x86)\Arduino\Libraries (path may be different depending on the installation directory of the IDE).</li>
+		<li>Connect Arduino Uno board to your PC. From Device Manager, note the COM port at which Arduino Uno board is installed. From Tools menu in Arduino IDE, select the board as Arduino Uno and select the COM Port number noted earlier. Upload adioes code to Arduino Uno board by pressing Upload button in the IDE.</li>
+		<li> Copy the entire contents of the extracted ArduinoIO folder to a folder in My Documents (For Windows PC).</li>
+		<li> Our application program has been developed in R2014a version of MATLAB. After installing this version of MATLAB in your PC, open install_arduino.m file present in the directory where you have copied the contents of ArduinoIO folder. Now, run install_arduino.m file. This code will correctly install and save the path of Arduino support package.</li>
+		<li>Open the source code file for this project titled car.m. Edit the COM port [in the line a=arduino(‘COM9’)] with the port number in your PC where Arduino Uno board has been installed. After running the file, MATLAB will try to communicate with the board.
+			After successful communication is established, you can control the robot by pressing the appropriate pushbutton in the GUI.</li>
+	</ol>
+	<h1>Constructing and testing</h1>
+	<p>An actual-size, single-side PCB for the circuit controlling the robotic car using MATLAB based GUI using Arduino is shown in Fig. 4 and its component layout in Fig. 5. Suitable connectors are provided on the PCB for input (CON1) from Arduino and output (CON2 and CON3) for motors.</p>
+	<img src="../img/car4.jpg" >
+	<img src="../img/car5.jpg" >
+	<h4>
+		<strong>Download PCB and component layout PDFs:</strong>
+		<strong>
+			<a href="folder.zip">Click Here</a>
+		</strong>
+	</h4>
+	<h4>
+		<strong>Download source folder:</strong>
+		<strong>
+			<a href="#">Click Here</a>
+		</strong>
+	</h4>   
+	<h1>And thats it, here you are ready with your project.</h1>
+	<br><br><br><br>
+</section>
+
+</body>
+</html>

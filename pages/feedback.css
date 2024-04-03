@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url(../img/Screenshot\ 2024-03-06\ 234728.png);
+    padding: 0 10px;
+}
+
+.container111{
+    border: 2px solid #000;
+    border-radius: 35px;
+    max-width: 700px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: #ffe;
+    color: #000;
+}
+
+.container111 .form .input_field{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 10px;
+}
+
+.container111 .form .input_field label{
+    border: 2px solid #fff;
+    width: 150px;
+}
+
+.container111 .form .input_field input
+{
+    padding: 5px;
+    height: 30px;
+    width: 100%;
+}
+
+.container111 .form .input_field .feed{
+    width: 100%;
+    resize: none;
+}
+
+@media (max-width:500px){
+    .container111 .form .input_field{ 
+        flex-direction: column;
+
+    }
+}

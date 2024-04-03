@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(30, 152, 112);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+   
+}
+.container{
+    color:rgb(123, 254, 75);
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 50px;
+    box-shadow: -5px 5px 20px black ;
+    background-color: #f40468;
+    transition: height .2s ease;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+.title{
+    width: 400px;
+    top: 25px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position:absolute ;
+    left: 0;
+    height: 3px;
+    width: 363px;
+    background: darkorange;
+    bottom: 0;
+    
+}
+
+.container.active{
+  height: 700px;
+  overflow: hidden;
+}
+
+.container .form-box.login{
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+.container.active .form-box.login{
+  transition: none;
+  transform: translateX(900px);
+}
+
+
+.container .form-box.register-box{
+  position: absolute;
+  transition: none;
+  transform: translateX(-900px);
+
+}
+
+.container.active .form-box.register-box{
+  transition: none;
+  transform: translateX(-00px);
+}
+.input-box{
+  position: relative;
+}
+
+.input-box label{
+  position: absolute;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transform: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+  top: -5px;
+}
+
+.form-box{
+  overflow: hidden;
+}
+
+.container form .details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;           
+}
+/*.container form .details:hover{
+background-color: pink;
+}*/
+form .details .input-box{
+    width: calc(100% / 2 - 20px);
+    color: rgb(19, 253, 81); 
+}
+.details .input-box input{
+   display: block;
+   font-weight: 500;
+   margin-bottom: 5px;
+   background-color:rgba(240, 255, 255, 0.69) ;
+}
+.details .input-box input{
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid darkorange;
+    padding-left:15px ;
+    font-size: 14px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+form .gender .gtitle{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender .category{
+        display: flex;
+        width: 30%;
+        margin: 14px 0;
+        justify-content: space-between;
+}
+.gender .category label{
+    display: flex;
+    align-items: center;
+}
+.gender .category .dot{
+        height: 18px;
+        width: 18px;
+        background: gainsboro;
+        margin-right: 10px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        transition: all 0.0s ease;
+        cursor: pointer;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two
+{
+background-color: rgb(121, 250, 250);
+}
+.one:hover ,.two:hover{
+    box-shadow:0 0 5px rgb(121, 250, 250),
+    0 0 25px rgb(121, 250, 250),
+    0 0 100px rgb(121, 250, 250),
+    0 0 200px rgb(121, 250, 250);
+}
+form input[type="radio"]{
+    display: none;
+}
+.avatar {
+    position: absolute;
+	z-index: 3;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: 75px;
+	left: 740px;
+    box-shadow: 0 0 5px aqua,
+                0 0 25px aqua;
+}
+.avatar:hover{
+    box-shadow:0 0 5px aqua,
+    0 0 25px aqua,
+    0 0 100px aqua,
+    0 0 200px aqua;
+}
+
+button {
+    background-color: rgb(121, 250, 250);
+    border: none;
+    width: 500px;
+    height: 30px;
+    margin-left: 100px;
+    cursor: pointer;
+    color: aliceblue;
+    border-radius: 20px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    font-size: 29px;
+}
+button:hover{
+    box-shadow:0 0 5px rgb(121, 250, 250),
+    0 0 25px rgb(121, 250, 250),
+    0 0 100px rgb(121, 250, 250),
+    0 0 200px rgb(121, 250, 250);
+    text-shadow: #fff;
+    color:rgb(121, 250, 250);
+    background-color: aliceblue 
+}
+
+nav {  display:flex;
+top: 660px;
+     bottom: 0;
+     position: absolute;
+     margin-left: 100px;
+}
+#app{
+      position: relative;
+      display: block;
+      margin-right: 20px;
+     /* padding-right: 30px;*/
+      border-radius: 50px;
+}
+main {
+    transition: all 0.5s;
+    -webkit-text-stroke: 4px #d6f4f4;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 10rem;
+    text-align: center;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 10px 10px 0px #07bccc,
+      15px 15px 0px #e601c0,
+      20px 20px 0px #e9019a,
+      25px 25px 0px #f40468,
+      45px 45px 10px #482896;
+    cursor: pointer;
+  }
+  
+  main:hover {
+    font-variation-settings: "wght" 100, "ital" 0;
+    text-shadow: none;
+  }
+  .gif1{
+    height: 80px;
+    width: 80px;
+    top: 40px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 40%;
+    overflow: hidden;
+    left: 300px
+  }
+  .gif2{
+    height: 70px;
+    width: 70px;
+    top: 30px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 100px;
+    rotate: 30deg;
+  }
+  .gif3{
+    height:60px;
+    width: 60px;
+    top:660px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 100px;
+  }
+  .gif4{
+    height: 70px;
+    width: 70px;
+    top: 40px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 40%;
+    overflow: hidden;
+    left: 1400px;
+     rotate:20deg;
+  }.gif5{
+    height: 64px;
+    width: 64px;
+    top: 400px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 30px;
+  }
+  .gif6{
+    height: 70px;
+    width: 70px;
+    top: 640px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 1200px;
+  }
+  .gif7{
+    height: 55px;
+    width: 55px;
+    top: 520px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 1440px;
+  }
+  .gif8{
+    height: 55px;
+    width: 55px;
+    top: 520px;
+    position: absolute;
+     z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 760px;
+  }
+
+  .remember-forgot{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.remember-forgot a{
+    padding-left: 10px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    margin: 5px;
+    accent-color: #fff;
+}
+
+.register-acc{
+    font-size: 20px;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.login-acc{
+    font-size: 20px;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="projectpage11.css">
+</head>
+<body>
+<nav>
+  <a href="#">PROJECTS</a>
+  <span id="void"></span>
+  <a href="#">SERVICES</a>
+  <a href="#">CONTACT</a>
+  <a href="#">ABOUT US</a>
+  <a href="#">POLICIES</a>
+</nav>
+<section id="info">
+  <div class="content"><center><h1>Fingerprint Sensor module with the Arduino</h1></center></div><br /><br /><br /><br />
+    <p>This post is an introductory guide on how to use the Fingerprint Sensor Module with the Arduino. We’ll show you how to enroll a new fingerprint ID, and how to find a fingerprint match.</p>
+    <iframe width="420" height="315" src="https://youtu.be/r-opSIx66TE"></iframe>
+    <h1>Introducing the Fingerprint Sensor Module</h1>
+    <p>Fingerprint sensor modules, like the one in the following figure, made fingerprint recognition more accessible and easy to add to your projects. This means that is is super easy to make fingerprint collection, registration, comparison and search.</p>
+    <img src="../img/sensor1.webp" class="img1">
+    <p>These modules come with FLASH memory to store the fingerprints and work with any microcontroller or system with TTL serial. These modules can be added to security systems, door locks, time attendance systems, and much more.
+        Prices for this sensor greatly vary from $10 to $50. We recommend checking the Fingerprint sensor module on Maker Advisor that compares the price in different stores. The fingerprint sensor modules featured on Maker Advisor should be compatible with this guide.</p>
+    <h1>Specifications</h1>
+    <p>Here’s the specifications of the fingerprint sensor module we’re using (you should check your sensor datasheet or the specifications provided by your supplier – they shouldn’t be much different than these):</p>
+         <ol>
+            <li>Voltage supply: DC 3.6 to 6.0V</li>
+            <li>Current supply: <120mA</li>
+            <li>Backlight color: green</li>
+            <li>Interface: UART</li>
+            <li>Bad rate: 9600</li>
+            <li>Safety level: five (from low to high: 1,2,3,4,5)</li>
+            <li>False Accept Rate (FAR): 0.001% (security level 3) </li>
+            <li>False Reject Rate (FRR): 1.0% (security level 3) </li>
+            <li>Able to store 127 different fingerprints</li>
+         </ol>
+    <h1>Sensor Pinout</h1>
+    <p>The sensor has six pins that are labeled in the figure below.</p>
+    <img src="../img/sensor2.webp">
+    <p>The fingerprint sensor module used in this project came with really thin wires, so soldering breadboard-friendly wires was needed. We recommend using different colors according to the pin function. In our case:</p>
+         <ol>
+            <li>DNC – white wires</li>
+            <li>VCC – red wire</li>
+            <li>TX – blue wire</li>
+            <li>RX – green wire</li>
+            <li>GND – black wire</li>
+         </ol>
+    <img src="../img/sensor3.webp">
+    <h2>Wiring Instructions</h2>
+
+     <table border="1">
+            <tr>
+              <th>Fingerprint Sensor</th>
+              <th>Arduino</th>
+            </tr>
+            <tr>
+              <td>VCC</td>
+              <td>5V (it also works with 3.3V)</td>
+            </tr>
+            <tr>
+              <td>TX</td>
+              <td>RX (digital pin 2, software serial)</td>
+            </tr>
+            <tr>
+              <td>RX</td>
+              <td>TX (digital pin 3, software serial)</td>
+            </tr>
+            <tr>
+              <td>GND</td>
+              <td>GND</td>
+            </tr>
+     </table>
+     <h2>Installing the Adafruit Fingerprint Sensor Library</h2>
+     <p>The easiest way to control the fingerprint sensor module with the Arduino is by using the Adafruit library for this sensor. Follow the next instructions to install the library:</p>
+      <ol>
+        <li>Click <a href="https://example.com/path/to/Adafruit-Fingerprint-Sensor-Library.zip" target="_blank">here</a> to download the Adafruit Fingerprint Sensor library. You should have a .zip folder in your Downloads folder.</li>
+        
+        <li>Unzip the .zip folder, and you should get anAdafruit-Fingerprint-Sensor-Library-masterfolder.</li>
+        
+        <li>Rename your folder from Adafruit-Fingerprint-Sensor-Library-masterto Adafruit_Fingerprint_Sensor_Library.</li>
+        
+        <li>Move the folder to your Arduino IDE installation libraries folder.</li>
+        
+        <li>Finally, re-open your Arduino IDE.</li>
+      </ol>
+      <h2>Enroll a New Fingerprint</h2>
+      <p>Having the fingerprint sensor module wired to the Arduino, follow the next steps to enroll a new fingerprint. Make sure you’ve installed the Adafruit Fingerprint Sensor library previously.</p>
+      <ol>
+        <li>In the Arduino IDE, go to File > Examples > Adafruit Fingerprint Sensor Library > Enroll.</li>
+        <li>Upload the code, and open the serial monitor at a baud rate of 9600.</li>
+        <li>You should enter an ID for the fingerprint. As this is your first fingerprint, type 1 at the top left corner, and then, click the Send button.</li>
+        <img src="../img/sensor4.webp">
+        <li>Place your finger on the scanner and follow the instructions on the serial monitor.</li>
+        <img src="../img/sensor5.webp">
+        <p>You’ll be asked to place the same finger twice on the scanner. If you get the “Prints matched!” message, as shown below, your fingerprint was successfully stored. If not, repeat the process, until you succeed.</p>
+        <img src="../img/sensor6webp.webp">
+        <p>Store as many fingerprints you want using this method.</p>
+      </ol>
+      <h2>Finding a Match</h2>
+      <p>You now should have several fingerprints saved on different IDs. To find a match with the fingerprint sensor, follow the next instructions.</p>
+      <ol>
+        <li>In the Arduino IDE, go to File > Examples > Adafruit Fingerprint Sensor Library > Fingerprint and upload the code to your Arduino board.</li>
+        <li>Open the Serial Monitor at a baud rate of 9600. You should see the following message:</li>
+        <img src="../img/sensor7.webp">
+        <li>Place the finger to be identified on the scan.</li>
+        <li>On the serial monitor, you can see the ID that matches the fingerprint. It also shows the confidence – the higher the confidence, the similar the fingerprint is with the stored fingerprint.</li>
+        <img src="../img/sensor8.webp">
+      </ol>
+      <h2>Project Example – Show Fingerprint Match on OLED display</h2>
+      <p>In this project example, we’ll enroll two fingerprints from two different persons. Then, we’ll display a greeting message accordingly to the match found, on an OLED display.</p>
+      <h2>Parts required</h2>
+      <p>For this example you’ll need the following parts:</p>
+      <img src="../img/sensor9.webp">
+      <ul>
+        <li>Arduino UNO – read Best Arduino Starter Kits</li>
+        <li>Fingerprint sensor module</li>
+        <li>0.96 inch OLED display</li>
+        <li>Breadboard</li>
+        <li>Jumper Wires</li>
+      </ul>
+      <h2>Schematics</h2>
+      <p>Here’s the wiring diagram you should follow to make the circuit for this project.</p>
+      <img src="../img/s10.webp">
+      <h2>Installing the 0.96 inch OLED libraries</h2>
+      <p>To control the OLED display you need the adafruit_SSD1306.h and the adafruit_GFX.h libraries. Follow the next instructions to install those libraries.</p>
+      <ol>
+        <li>Open your Arduino IDE and go to Sketch > Include Library > Manage Libraries. The Library Manager should open.</li>
+        <li>Type “SSD1306” in the search box and install the SSD1306 library from Adafruit.</li>
+        <img src="../img/s11.webp">
+        <li>After installing the SSD1306 library from Adafruit, type “GFX” in the search box and install the library.</li>
+        <img src="../img/s12.webp">
+        <li>After installing the libraries, restart your Arduino IDE.</li>
+      </ol>
+      <h2>Code</h2>
+      <p>Before uploading the code, you need to enroll different fingerprints from different persons. Go to “Enroll a New Fingerprint” section above, upload the given code and follow the instructions to enroll two fingerprints.</p>
+      <p>Then, modify the code so that the fingerprint IDs match the name of the persons enrolled – scroll down to page for an explanation of the code. Finally, you can upload the code provided.</p>
+      <pre>
+        <code>
+        /*********
+          Rui Santos
+          Complete project details at https://randomnerdtutorials.com  
+        *********/
+        
+        #include &lt;Wire.h&gt;
+        #include &lt;Adafruit_GFX.h&gt;
+        #include &lt;Adafruit_SSD1306.h&gt;
+        #define OLED_RESET 4
+        Adafruit_SSD1306 display(OLED_RESET);
+        
+        #include &lt;Adafruit_Fingerprint.h&gt;
+        #include &lt;SoftwareSerial.h&gt;
+        SoftwareSerial mySerial(2, 3);
+        
+        Adafruit_Fingerprint finger = Adafruit_Fingerprint(&amp;mySerial);
+        int fingerprintID = 0;
+        String IDname;
+        
+        void setup(){
+          // Fingerprint sensor module setup
+          Serial.begin(9600);
+          // set the data rate for the sensor serial port
+          finger.begin(57600);
+          
+          if (finger.verifyPassword()) {
+            Serial.println("Found fingerprint sensor!");
+          } 
+          else {
+            Serial.println("Did not find fingerprint sensor :(");
+            while (1) { delay(1); }
+          }
+        
+          // OLED display setup
+          Wire.begin();
+          display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+          // displays main screen
+          displayMainScreen();
+        }
+        
+        void loop(){
+          displayMainScreen();
+          fingerprintID = getFingerprintIDez();
+          delay(50);
+          if(fingerprintID == 1 || fingerprintID == 3 || fingerprintID == 4 || fingerprintID == 5){
+            IDname = "Sara";
+            displayUserGreeting(IDname);            
+          }  
+          else if(fingerprintID == 2){
+            IDname = "Rui";  
+            displayUserGreeting(IDname);            
+          }
+        }
+        
+        // returns -1 if failed, otherwise returns ID #
+        int getFingerprintIDez() {
+          uint8_t p = finger.getImage();
+          if (p != FINGERPRINT_OK)  return -1;
+        
+          p = finger.image2Tz();
+          if (p != FINGERPRINT_OK)  return -1;
+        
+          p = finger.fingerFastSearch();
+          if (p != FINGERPRINT_OK)  return -1;
+          
+          // found a match!
+          Serial.print("Found ID #"); 
+          Serial.print(finger.fingerID); 
+          Serial.print(" with confidence of "); 
+          Serial.println(finger.confidence);
+          return finger.fingerID; 
+        }
+        
+        void displayMainScreen(){
+          display.clearDisplay();
+          display.setTextSize(1);
+          display.setTextColor(WHITE);
+          display.setCursor(7,5);
+          display.println("Waiting fingerprint");
+          display.setTextSize(1);
+          display.setTextColor(WHITE);
+          display.setCursor(52,20);
+          display.println("...");  
+          display.display();
+          delay(2000);
+        }
+        
+        void displayUserGreeting(String Name){
+          display.clearDisplay();
+          display.setTextColor(WHITE);
+          display.setTextSize(2);
+          display.setCursor(0,0);
+          display.print("Hello");
+          display.setCursor(0,15);
+          display.print(Name); 
+          display.display();
+          delay(5000);
+          fingerprintID = 0; 
+        }
+        </code>
+        </pre>
+        
+        <h2>Importing libraries</h2>
+        <p>The code starts by importing the needed libraries to write in the OLED display, and creates an Adafruit_SSD1306 object called display.</p>
+        <pre>
+          <code>
+            #include <Wire.h>
+              #include <Adafruit_GFX.h>
+              #include <Adafruit_SSD1306.h>
+              #define OLED_RESET 4
+              Adafruit_SSD1306 display(OLED_RESET);              
+          </code>
+        </pre>
+
+        <h2>setup()</h2>
+        <p>In the setup(), both the fingerprint sensor and the OLED display are initialized. We also print a message on the serial monitor so that we know if the fingerprint sensor was found successfully.</p>
+        <pre>
+          <code>
+            void setup(){
+              //Fingerprint sensor module setup
+              Serial.begin(9600);
+              // set the data rate for the sensor serial port
+              finger.begin(57600);
+              
+              if (finger.verifyPassword()) {
+                Serial.println("Found fingerprint sensor!");
+              } 
+              else {
+                Serial.println("Did not find fingerprint sensor :(");
+                while (1) { delay(1); }
+              }
+             
+             //OLED display setup
+              Wire.begin();
+              display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+              //displays main screen
+              displayMainScreen();
+             }
+          </code>
+        </pre>
+
+        <h2>loop()</h2>
+        <p>In the loop(), the code displays the main screen on the OLED display – this is done in the displayMainScreen() function. Then, the code is continuously checking for incoming fingerprints. If the sensor founds a saved fingerprint, the Arduino saves the corresponding ID in the fingerprintID variable.</p>
+        <p>Then, the code has an if/else statement to check the ID the fingerprint corresponds to. You should edit the following lines of code with the corresponding IDs and names.</p>
+        <pre>
+          <code>
+            if(fingerprintID == 1 || fingerprintID == 3 || fingerprintID == 4 || fingerprintID == 5){
+              IDname = "Sara";
+              displayUserGreeting(IDname); 
+            } 
+            else if(fingerprintID == 2){
+              IDname = "Rui";
+          </code>
+        </pre>
+        <p>Sometimes, the sensor will recognize a fingerprint better if it is saved several times in different IDs. After identifying the ID name, the OLED displays a greeting – this is done in the displayUserGreeting() function,</p>
+
+        <h2>Demonstration</h2>
+        <p>Now, when a person with a saved fingerprint places the finger on the sensor, it displays a greeting message.</p>
+        <img src="../img/s13.webp">
+        <p>Sometimes the sensor has a hard time identifying the fingerprint if you don’t place your finger very similarly to when you’ve saved it – specially women’s fingerprints (we have no idea why this happens). We’ve noticed that the sensor works better if you place your finger slowly on the scanner.</p>
+        <p>In our opinion, the fingerprint sensor module works quite well, and it is an affordable way to add biometrics recognition to your projects.</p>
+        <p>Thanks for reading.</p>
+    <br><br><br><br>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projectpage11.css">
+    <title>4x4x4 LED CUBE USING ARDUINO UNO</title>
+</head>
+    <body>
+      <nav>
+        <a href="#">PROJECTS</a>
+        <span id="void"></span>
+        <a href="#">SERVICES</a>
+        <a href="#">CONTACT</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">POLICIES</a>
+      </nav>
+      <section class="info">
+  <div class="content">
+    <h1>Are you ready to build 4x4x4 LED CUBE USING ARDUINO UNO with  ADDS!!!</h1>
+    <h2>Here is the list of components you will be needing. </h2>
+    <div class="it">
+        <ol type="1">
+           <li>64 Diffused LEDs</li>
+           <li>4 100 OHM Resistors</li> 
+           <li> 1 x AA battery</li> 
+           <li>Pin Header</li> 
+           <li>Slide Switch</li> 
+            <li> Wire and Craft Wire </li> 
+            <li>A Hot Glue Gun</li>
+            <li>Perf Board</li> 
+           <li>9V Power Supply</li> 
+           <li>Arduino Uno</li> 
+           <li>Drill, 1/16" Drill Bit, 5/16" Drill Bit</li>
+           <li>Knife</li>
+           <li>Straight Edge</li>
+           <li>Needle Nose Pliers</li>
+           <li>Soldering Iron,
+            Solder</li>
+        </ol>
+    <div class="container1"> <img class="components" src="../img/mini-robot-materials.jpg.webp"></div></div>
+    <h2>simply follow are easy steps to build your own project.so here we goo!!</h2>
+    <ul>
+        <li><h3>step 1: Making the LED Jig
+            First<br>Start by printing out my 4x4x4 LED Cube Template and paste it to a cardboard box.Make sure that the printing settings are set to actual size and landscape orientation. Next, punch out all 16 LED holes(grey dashed circles) using a pencil. Insert a LED into the individual holes to test the fit.</h3>
+        <div class="container1"><img class="img1" src="../img/mini-robot-base.jpg.webp"></div></li>
+        <li><h3> step 2:Making the LED Cube<br>
+            Take the 64 LEDs and test them to ensure that they all work using a button cell battery. This may sound tedious but in the end this will safe-guard your your project! Next, insert 16 LEDs into the holes and bend the leads to the direction of the arrows using needle nose pliers. The red arrows represent the positives(anodes) likewise the blue arrows represent the negatives(cathodes). Solder all of the positive leads together and trim off the access of the leads. Now, you might have noticed that there are two gaps in the layer of the positive leads. This can be solved by straightening a length of craft wire by pulling both ends of the wire with pliers and trimming two 1" sections that are then soldered in place. After the hole positive layer is soldered together, flip the box over and start pushing the tips of the LEDs out of the holes in the jig. Make sure to do this evenly to avoid bending or damaging the layers structure. Now your first LED layer is finished! Follow this step three more times to end up with four layers. Next, take the four LED layers and solder the negative leads together by stacking the individual layers on the top of each other. Start by soldering the leads in the center, then work out to the leads on the edge. The 4x4x4 LED cube is starting to take shape! Straghten another length of craft wire and cut and bend four sections that will later connect the four layers to the perf board. Finally, solder them in place.</h3>
+        <div class="container1"><img class="img1" src="../img/mini-robot-unbalancer.jpg.webp"></div></li>
+        <li><h3>step 3:  Installing the LED Cube<br>
+            Start by marking an outline of a square with a Sharpie that is slightly smaller than the interior sides of project box on the perf board. Use a straight edge and a knife to score the outline along the lines, then break off the access material by placing the perf board in a vise or on the edge of a table, then apply pressure till the scored sides snap off. Next, drill 20 holes with a 1/16" drill bit for the leads on the top of the project box. An easy way of doing this is by marking the holes where the leads poke out of the perf board and then taping the board to the top of the project box. Next mark the 20 holes on the top of the box through the board with a sharpened pencil. Take the perf board off and drill where the markings are on the project box. Then glue the perf board inside of the box with some hot glue. Make sure that all 20 holes line up with the holes on the perf board. Next install the LED cube by carefully inserting each lead through the holes on the project box. Finally, solder the leads in place, then trim off the access wire.
+            </h3><div class="container1"><img class="img1" src="../img/mini-robot-legs.png.webp"></div></li>
+        <li><h3>step 4: Wiring the Circuit<br>
+            First, snap the pin header in to 3 pieces that fit the Arduino Unos digital and analog plug-ins. Strip and start soldering wires to the 16 digital leads(columns) on the perf board. For the 4 analog leads(layers), solder 100 OHM resisters to the leads then solder wires to each resisters lead. Next strip and solder the opposite ends of the wires to the 3 pin headers. The wiring is setup to resemble a graph with a 3rd dimension. For the columns, there are two axes X and Y. In addition, the layers serve as the Z axis. If you look straight down from the top of the LED cube it looks like the 1st quadrant on a graph except that the origin is (1,1) on the cube. Likewise each LED can be named using the fundamental graphing technique. Lets try an example; look at the demonstrational picture and find A(1,4). "A" means that it is on the first layer and "(1,4)" is X=1,Y=4 on the graph.</h3>
+        <div class="container1"><img class="img1" src="../img/mini-robot-soldering.jpg.webp"></div></li>
+        <li><h3>step 5: Connection Setup:<br>
+            Columns<br>
+            [(x,y)-Pin]<br>
+            (1,1)-13<br>
+            (1,2)-12<br>
+            (1,3)-11<br>
+            (1,4)-10<br>
+            (2,1)-9<br>
+            (2,2)-8<br>
+            (2,3)-7<br>
+            (2,4)-6<br>
+            (3,1)-5<br>
+            (3-2)-4<br>
+            (3-3)-3<br>
+            (3,4)-2<br>
+            (4,1)-1<br>
+            (4,2)-0<br>
+            (4,3)-A5<br>
+            (4,4)-A4<br>
+            Layers<br>
+            [Layer-Pin]<br>
+            a-A0<br>
+            b-A1<br>
+            c-A2<br>
+            d-A3
+        </h3><div class="container1"><img class="img1" src="../img/mini-robot-batter-motor.jpg.webp"></div></li>
+       <li><h3>step 6: Installing the Arduino/ Power Supply<br>
+        Take the sliding switch and cut the mounting tabs off with the wire snips on the needle nose pliers. Next, cut and strip the positive wires of the power supply and solder the switch to the positive leads. Drill a hole on the side of the project box with a 5/16" drill bit. Make sure to work up to the 5/16" hole in increments of bit sizes. Carve away the plastic ribs in the interior of the box near the hole with a knife, then hot glue the switch in place. Next, plug the pin headers and the 9v power supply into the Arduino Uno. Lastly, upload the code(sketch) to the Arduino then tighten the bottom lid on to project box. Now the 4x4x4 LED cube is finally finished!</h3><div class="container1"><img class="img1" src="soldering-finished.jpg.webp"></div></li>    
+    </ul>
+    <h2>And thats it, here you  are ready with your project.</h2></div>
+      </section>
+    <button onclick="topFunction()" id="mybtn" >top</button>
+    <script>
+
+let mybutton = document.getElementById("mybtn");
+window.onscroll= function(){scrollFunction()};
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newprojectpage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer1">
+        <div class="outer12 logo">
+            <div class="img1">
+                <img src="../img/qhw5rnzk.png" alt="" class="image11">
+            </div>
+        </div>
+        <div class="outer12 nav12">
+            <div class="navigation-bar">
+                <h2>WELCOME TO MANOS</h2>
+                <input type="search" onkeyup="search();" id="find" placeholder="Search here">
+                <nav>
+                    <a class="" href="">SERVICES</a>
+                    <a class="" href="">CONTACT</a>
+                    <a class="" href="">ABOUT US</a>
+                    <a class="" href="">POLICIES</a>
+                    <button class="LOGIN"><a href="./pages/media.HTML">LOGIN/SIGN UP</a></button>
+                  </nav>
+            </div>
+        </div>
+        <div class="outer12 button1">
+            <div class="but">
+                <input type="button" class="button11" value="PREVIOUS" onclick="previous()">
+                <input type="button" class="button12" value="FORWARDS" onclick="forward()">
+            </div>
+        </div>
+        <div class="outer12 main">
+            <div class="actual">
+                   <div class="flex1 pro1">
+                    <p><a href="../projectpages/Floating.html">
+                      BE READY TO MAKE FLOATING GREEN WITH MANOS </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro2">
+                    <p><a href="../projectpages/microgreen.html">
+                      HOW TO MAKE MICROGREEN AT HOME </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro3">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO 1:  </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro4">
+                    <p><a href="./projectpages/projectpage1.html">
+                      PROJECT NO : </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro5">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO :  </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro6">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO :  </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro7">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO :  </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro8">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO :  </a>
+                    </p>
+                   </div>
+                   <div class="flex1 pro9">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO :  </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro10">
+                    <p><a href="../projectpages/projectpage1.html">
+                      PROJECT NO : </a>
+                  </p>
+                   </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let mybutton = document.getElementById("mybtn");
+        window.onscroll= function(){scrollFunction()};
+        function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    
+      function search() {
+      let filter = document.getElementById('find').value.toUpperCase();
+      let item = document.querySelectorAll('.flex1');
+      let l = document.getElementsByTagName('a');
+      for(var i = 0;i<=l.length;i++){
+      let a=item[i].getElementsByTagName('a')[0];
+      let value=a.innerHTML || a.innerText || a.textContent;
+      if(value.toUpperCase().indexOf(filter) > -1) {
+      item[i].style.display="";
+      }
+      else
+      {
+      item[i].style.display="none";
+      }
+      }
+      }
+    
+    </script>
+</body>
+</html>

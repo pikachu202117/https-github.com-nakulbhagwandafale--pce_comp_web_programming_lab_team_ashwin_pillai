@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .editable-div {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="editable-div" contenteditable="true" id="myEditableDiv" oninput="saveContent()">
+    <!-- Your editable content goes here -->
+    Start typing...
+  </div>
+
+  <button onclick="sendToServer()">Save Changes to Server</button>
+
+  <script>
+    // Function to save content to local storage
+    function saveContent() {
+      const editableDiv = document.getElementById('myEditableDiv');
+      const content = editableDiv.innerHTML;
+      localStorage.setItem('savedContent', content);
+    }
+
+    // Function to send content to the server
+    function sendToServer() {
+      const editableDiv = document.getElementById('myEditableDiv');
+      const content = editableDiv.innerHTML;
+
+      // Using Fetch API to send a POST request to the server
+      fetch('./saveContent.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Server response:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="projectpage11.css">
+</head>
+<body>
+<nav>
+  <a href="#">PROJECTS</a>
+  <span id="void"></span>
+  <a href="#">SERVICES</a>
+  <a href="#">CONTACT</a>
+  <a href="#">ABOUT US</a>
+  <a href="#">POLICIES</a>
+</nav>
+<section id="info">
+  <div class="content"><center><h1>How to Build a Drone | A DIY Guide</h1></center></div><br /><br /><br /><br />
+            <p>Building your own drone can be a fascinating and rewarding project. 
+               Let’s explore the steps involved in creating a simple quadcopter drone: </p>
+            <img src="../img/drone.jpg">
+            <p>If you want to learn how to build your own drone, you are in the right place. There are many types of people that may be interested in this new drone world. However, this guide is dedicated for the nerds (and I mean that as a compliment).</p>
+          <h2>Basic Tools Needed to Build a Drone</h2>
+         <ol>
+            <li>Soldering Iron and solder (Required): You will need a soldering iron for assembling some of your drone parts.</li>
+            <li>Helping Hands (Optional): Helping hands keep you sane while trying to solder. They basically hold the part wanting to be soldered in place.</li>
+            <li>Double sided sticky tape (Required): This is almost the most important part for any drone build, and I’m only sort of kidding. You will be fixing many parts to your frame simply with double sided sticky tape.</li>
+            <li>Zip Ties (Required): Some drone hardware is easier to fix to the frame with simple zip ties, like ESCs (See below).</li>
+            <li>Heat shrink or electrical tape (Required): Your motors and ESCs will probably be connected with bullet connectors (More foreshadowing, see below). If these metal bullet connectors touch while you’re flying, the circuit will short out and your drone will probably crash down to earth. Avoid this terror by placing an insulator around your metal bullet connectors.</li>
+         </ol>
+         <img src="../img/drone1.jpeg">
+         <h2>Basic Drone Parts for a DIY Drone </h2>
+         <h2>Frame</h2>
+         <p>There are two main things to note about the frame of your drone. The first being how many arms there are. Each arm will normally have one motor, which will have one propeller. For this reason, drones with multiple motors are simply referred to as ‘multirotors’.</p>
+         <img src="../img/drone2.png">
+         <p>Quadcopter: A drone with four motors.</p>
+         <h2>Motors</h2>
+         <p>There are two main types of motors: brushed and brushless. Your cheaper ready to fly drones will be using brushed motors, and that’s because they are using the cheaper motor. While cheap, they wear down and break much faster than brushless motors. Brushless motors last much longer and are the preferred motor of choice for diy drone builds.</p>
+         <p>There are innumerable amounts of brushless motors out there. To help you determine what motor will go best with your build, most manufacturers give you some information about the product. The two most common specs are the size and KV rating.</p>
+         <p>Let’s look at a particular example.</p>
+         <img src="../img/drone3.png">
+         <p>Here the motor size is 2213. That is really representing two numbers and should be shown like this: 22-13.</p>
+         <p>The 22 is the width of the stator in mm, and the 13 is the height of rotor in mm. Typically, the wider the width, the more torque the motor have.</p>
+         <p>Another spec that comes with brushless motors is the KV-rating. On our example motors, it is 935KV. Don’t confuse KV with kilo-volts. Here KV rating means RPMs per one volt of input.</p>
+         <p>So if we supplied 1 volt to a 935 KV motor, it would spin at 935 RPMs. Two volts input would cause 1870 RPMs etc.</p>
+         <p>Lower KV motors produce much more torque, so can spin larger props at slower speeds to get lift. Larger KV motors produce much lower torque, but spin smaller props much faster to get lift.</p>
+         <p>Typically larger drones use low KV motors, and smaller drones use high KV motors.</p>
+         <p>The last thing I’ll say here is most manufacturers will show you the specs of parts that should be used with the motor, which can prove helpful in selecting parts once you’ve chosen your motors.</p>
+         <p>Our example motor comes with the following helpful information.</p>
+         <h2>Propellers (Props)</h2>
+         <p>The next part in this make a drone guide is the props. Propellers will always come with a four-digit number like 8045, or 1045 or 6030.</p>
+         <p>The first two digits communicates the diameter of the prop in inches (Yay Americans!). So an 8045 prop will be 8 inches in diameter.</p>
+         <img src="../img/drone5.jpg">
+         <p>The last two digits represent the pitch, in inches. The 8045 example has a 4.5-inch pitch, and the 6030 prop has a 3 inch pitch.</p>
+         <p>Pitch is a little less intuitive to understand than diameter. Qualitatively, the higher the pitch the more air will be pushed down. A prop with a pitch of 0 inches would be like spinning a butter knife.</p>
+         <p>Let’s now imagine that we placed the pitch of our 8045 prop onto a screw, so the screw now has 4.5 in pitch. One rotation of the screw would cause it to dig into wood by 4.5 inches. We can now see that the higher the pitch of a prop, the more substance (air) it will move.</p>
+         <p>Higher pitch props are normally used with low KV motors since they provide more torque. They can spin slower since high pitch props are pushing a lot of air per unit of rotation. Lower pitch props are used with high KV motors since they spin much faster. Accordingly, they have to spin faster since they are pushing less air per rotation.</p>
+         <h2>Electronic Speed Controllers (ESC)</h2>
+         <p>If you are using a brushless motor, you will need an electronic speed controller. Brushed motors do not require an ESC because they only need a simple DC voltage input.</p> 
+         <img src="../img/drone6.jpg">
+         <h2>Brushless Motors</h2>
+        <p>On the other hand, brushless motors require an input of three out-of-phase voltages. Don’t worry, this sounds scarier than it is. All you have to do is supply the ESC with a DC input voltage, and it will automatically generate three out-of-phase voltages that connect to the motor, causing it to spin.</p>
+        <p>Your manufacturer will tell you the range of input voltages your ESC can handle, so keep an eye on that.</p>
+        <p>Typically, your ESC will come with three outputs, and you will solder some male bullet connectors to the ends that will attach to the female bullet connectors of the motors.</p>
+        <h2>Lithium Polymer Battery (Lipo Battery)</h2>
+        <p>Your battery powers everything on your drone. Choosing the right battery is crucial to making a drone.</p>
+        <p>Almost always, the battery of choice for drones is the Lipo battery. This is for its attributes of high capacity and high output current.</p>
+        <p>A typical Lipo battery will come with specs like this: <strong>3000 mAh 4S 50C</strong></p>  
+        <img src="../img/drone7.jpg">
+        <h2>Lipo Cell Count</h2>
+        <p>Let’s start with the 4S part. A battery pack is a bundle of individual little batteries, called cells. A lipo cell always has a voltage of 4.2V when fully charged, and 3.7V when depleted. So the 4S means that four of these Lipo cells were placed in series. Since batteries connected in series add voltages, we know the fully charged voltage of the total battery pack is:</p>
+        <p><strong>(Cell count)(Fully charged Voltage) = (4 cells)(4.2V) = 16.8 Volts</strong></p>
+        <h2>Capacity</h2>
+        <p>Moving onto the mAh spec. This is a measure of capacity, and capacity is normally measured in Coulombs of charge. Think of capacity like the volume of a liquid container; it simply represents how much charge is in the battery.</p>
+        <p><strong>SUPER NERD STUFF ALERT. SKIP TO C-RATING IF YOU DON’T CARE ABOUT UNITS!</strong></p>
+        <p>But wait! mAh has no units of Coulombs in it! It actually does, but it’s just hidden. Let me explain.</p>
+        <p><strong>1 Amp = 1 Coulomb/second = 1 C/s</strong></p>
+        <p><strong>1 h = 1 hour = 3600 seconds</strong></p>
+        <p><strong>m = milli = 1/1000</strong></p>
+        <p>So subbing in our variables into mAh:</p>
+        <p><strong>3000 mAh = 3000(1/1000)(1 C/S)(3600 s) = 10800 Coulombs</strong></p>
+        <p>So 3000 mAh is the same thing as saying 10800 Coulombs.</p>
+        <p>The next part is the C-rating</p>
+        <h2>C-Rating</h2>
+        <p>The higher the C rating, the higher the output of current can be for that battery.</p>
+        <p>To find out the maximum current output your battery can handle, take the C rating and multiply it by the capacity of your battery in units of Ah.</p>
+        <p>The C rating has units of inverse hours (1/hour)</p>
+        <p><strong>3 Ah * 50 (1/h) = 150 A</strong></p>
+        <p>So this hypothetical 50C battery could output 150A of current!</p>
+        <p>Now there is some confusion on what the C rating actually means. Some manufacturers’ C rating simply means the maximum burst current you could output for 30 seconds, and others use the C rating to indicate the maximum continuous current output. Check with your specific battery manufacturer to determine which C rating they are using!</p>
+        <h2>Power Distribution Board (PDB)</h2>
+        <img src="../img/drone9.jpg">
+        <p>The power distribution board is where your main electrical components will connect. The main things you will solder to your PDB are your ESCs and battery connector.</p>
+        <p>When you plug in your battery to the PDB, it provides power to everything attached, so this is where your ESCs will be drawing their current from.</p>
+        <h2>Flight Controller</h2>
+        <p>A flight controller is basically the brains of the drone. It is essentially a hardware hub that all your drone parts will attach to. Things like the ESCs, GPS, Telemetry, RC Input and many other components.</p>
+        <img src="../img/drone10.png">
+        <p>All flight controllers should come equipped with a gyroscope and accelerometer (IMU), which together help to automatically balance your drone without any manual input.</p>
+        <p>All flight controllers are controlled by the firmware. Depending on the flight controller, you may have access to flash new firmware to the board. Firmware can either be closed source (property of a company that the public cannot see), or open source (the public can see the code and make modifications).</p>
+        <p>If you’d like to make a drone with open source firmware like ArduPilot or PX4, be sure that the board you are buying is supported.</p>
+        <h2>GPS</h2>
+        <p>GPS modules can be bought for pretty cheap. Typically they use the UART or I2C protocol, and most of GPS modules intended for drone use come equipped with a magnetometer as well.</p>
+        <p>You should have your GPS/magnetometer module lifted up in the air to get away from the magnetic fields being produced by your drone’s electronics.</p>
+        <p>If your GPS is too close to the electronics, it could be causing incorrect readings producing some funny flight.</p>
+        <p>You want to build a drone with a good GPS module. Look for one that has the M8N u-blox chip. These are much better than some of the other GPS modules available on Amazon, and cost around the same.</p>
+        <h2>RC Controller</h2>
+        <img src="../img/drone11.jpg">
+        <p>An RC controller will consist of a transmitter (the thing being held by the pilot) and a receiver (to receive the commands from the pilot).</p>
+        <p>The receiver will plug into your Flight Controller.</p>
+        <p>You have some options with the RC controller. Cheaper RC controllers have a lower number of channels. However, the minimum number of channels you should use is probably five or six for a drone.</p>
+        <img src="../img/drone12.png">
+        <p>Every drone will take up four channels automatically with the Roll, Pitch, Yaw and Throttle control.
+            Your excess channels can be used for more unique control, like changing the flight mode of your multirotor.</p>
+        <h2>Telemetry</h2>
+        <p>Telemetry is also used to wirelessly communicate with the drone. You definitely want to build a drone with telemetry.</p>
+        <p>There will be one module attached to the drone, and another to a computer (sometimes referred to as a ground control station GCS). This is typically plug and play.</p>
+        <p>The GCS can then communicate with the drone remotely. It can both send and receive information. For example, the GCS could track the drone’s position on a map, determine how fast the drone is moving, see battery voltage levels and many other things.</p>
+        <img src="../img/drone13.jpg">
+        <p>It can also be used to command the drone, meaning you wouldn’t actually need an RC controller to fly it.</p>
+        <p>While this is something that is possible and something that is actually done, telemetry is mostly used for receiving data back from the drone.</p>
+        <h2>How to Choose the Right Parts?</h2>
+        <p>Before you start to actually put the parts together and build a drone, we need to know how to find the right parts. The process of choosing the right drone parts is a mixture of both art and science.</p>
+        <p>The primary metric we will be looking at is the Thrust to Weight ratio, from hereon referred to as the TW ratio.</p>
+        <h4>TW Ratios</h4>
+        <p>We all know how to think of weight. It is the force that we are being pulled to the ground with.</p>
+        <p>Drones also have weight and can only fly if they can produce an upward thrust that is greater than their weight.</p>
+        <p>So a TW ratio of 2 means that the drone can produce twice as much upward force than its weight.</p>
+        <p>You should aim for different TW ratios depending on the application of your drone. For this reason, having a target TW ratio is the first step in the process of designing your own drone, as you will select parts to achieve that target.</p>
+        <p>If you are wanting to fly an aggressive FPV drone, TW ratios of 4 and above are typically used, but I’ve seen as high as 11.</p>
+        <p>For drones designed to carry a payload, TW ratios around 2 are normal, but you could fly with as low as a TW ratio of 1.5.</p>
+        <p>If your drone has a TW ratio of 1, well, you won’t get very far.</p>
+        <h4>Estimating Thrust to Weight Ratio</h4>
+        <p>To estimate TW ratio, you need to start by estimating the weight of your drone.</p>
+        <p>This means going through the part list above and adding up the weights of the various components (like motors, ESCs, flight controller, etc.). You should start with the frame you’d like to build and select parts from there.</p>
+        <p>Let’s say your estimate of weight for a drone you wanted to build was 1,000 grams. If you had a target TW of 2, this means you would need thrust of 2,000 grams. For a quadcopter, this would mean thrust of 500 grams on each motor.</p>
+        <img src="../img/drone14.jpg">
+        <p>Estimating thrust of a motor is a function of battery voltage, prop size and motor choice. Change one of these variables and you change how much thrust you will generate.</p>
+        
+        <h2>Solder bullet connectors to your motors and ESCs</h2>
+        <img src="../img/drone15.png" alt="DIY drone solder bullet connectors">
+    
+        <h2>Solder the ESCs and battery connector to PDB</h2>
+        <img src="../img/drone16.png" alt="Make a drone solder ESCs">
+    
+        <h2>Fix your PDB somewhere in the middle of the drone.</h2>
+        <p>This is typically in the middle or bottom of the frame. Securing the PDB can be done with zip ties.</p>
+    
+        <h2>Fix your ESCs to your drone’s arms</h2>
+        <p>One on every arm. The ESCs can be either on the top or bottom of the arm.</p>
+        <img src="../img/rone17.png" alt="Attaching ESCs to arms of DIY drone">
+    
+        <h2>Screw the motors to the end of each arm.</h2>
+        <p>The motors should come with mounting screws. Be sure not to over-tighten. You will have two CW and two CCW motors, make sure they are placed on the correct arms according to this diagram.</p>
+        <img src="../img/drone18.png" alt="Proper Motor Spin Direction">
+    
+        <p>Connect the bullet connectors from the ESCs to the motors</p>
+    
+        <h2>Test motors and see if motors are spinning in the right direction.</h2>
+        <p>If they aren’t, simply change two of the bullet connections.</p>
+    
+        <h2>Using double-sided sticky tape, secure the RC Input module to your drone</h2>
+        <p>Somewhere towards the middle of the frame.</p>
+    
+        <h2>Secure the Flight Controller to the drone somewhere near the middle.</h2>
+        <p>It is normally fixed to the very top of the frame or in the middle. This can be done with double-sided sticky tape as well, or some other means like screws.</p>
+    
+        <h2>Install the drone side telemetry module.</h2>
+    
+        <h2>Place your GPS on a mount and secure it somewhere towards the middle of the frame.</h2>
+        <img src="../img/drone19.png" alt="Installing GPS Mount">
+    
+        <p>Plug in all electronics/wires into the flight controller</p>
+    
+        <h2>Calibrate ESCs</h2>
+        <p><a href="path/to/how_to_calibrate_an_ESC_video_link">How to Calibrate an ESC in less than 5 Minutes (2020)</a></p>
+    
+        <h2>Attach Props.</h2>
+        <p>Don’t over-tighten the top bolt. If you installed the correct CW or CCW motor in the right location, the spin of the props will naturally tighten the bolt. Also, pay attention to what type of prop you are using. The spin of the prop should be pushing air downward.</p>
+        <img src="../img/drone20.png" alt="Installing Props on Motor">
+    
+        <h2>Connect drone to a GCS and calibrate sensors.</h2>
+        <p>This can be done by powering the GCS side telemetry module into a computer. The telemetry modules will be a solid color when they have paired. If they haven’t found each other, the modules will be blinking. Pull up your GCS software (I like MissionPlanner) and you will have access to your drone via the telemetry module.</p>
+    
+        <h2>Give it a test fly!</h2>
+    
+        <p>Complete Course on how to make a DIY drone</p>
+        <p>This guide should have given you some confidence to go out and try and make your own drone. If you are still feeling a little wary of starting your own drone building journey, definitely give my diy drone building course a look.</p>
+    
+        <h3>Raspberry Pi Drone Course</h3>
+        <p>It covers all of the content outlined in this page, but in much more detail. It also guides you along the drone building process with a list of pre-selected parts if you are wanting to build from a parts list.</p>
+    
+        <p>As an added bonus the drone built in this course uses a raspberry pi, and who wouldn’t love that?</p>
+    
+        <p>Let me know if you have any questions or comments below.</p>
+    
+        <p>Happy flying!</p>
+        
+        
+        
+        
+        
+        
+        
+        
+        <br><br><br><br>
+</section>
+
+</body>
+</html>

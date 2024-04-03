@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newprojectpage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer1">
+        <div class="outer12 logo">
+            <div class="img1">
+                <img src="../img/qhw5rnzk.png" alt="" class="image11">
+            </div>
+        </div>
+        <div class="outer12 nav12">
+            <div class="navigation-bar">
+                <h2>WELCOME TO MANOS</h2>
+                <input type="search" onkeyup="search();" id="find" placeholder="Search here">
+                <nav>
+                    <a class="" href="">SERVICES</a>
+                    <a class="" href="">CONTACT</a>
+                    <a class="" href="">ABOUT US</a>
+                    <a class="" href="">POLICIES</a>
+                    <button class="LOGIN"><a href="./pages/media.HTML">LOGIN/SIGN UP</a></button>
+                  </nav>
+            </div>
+        </div>
+        <div class="outer12 button1">
+            <div class="but">
+                <input type="button" class="button11" value="PREVIOUS" onclick="previous()">
+                <input type="button" class="button12" value="FORWARDS" onclick="forward()">
+            </div>
+        </div>
+        <div class="outer12 main">
+            <div class="actual">
+                   <div class="flex1 pro1">
+                    <p><a href="../projectpages/card.html">
+                      ARE YOU READY TO MAKE CIRCUIT GREETING CARD WITH US</a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro2">
+                    <p><a href="../projectpages/chromatography.html">
+                      BUILD THIS EASY CHROMATOGRAPHY FLOWER WITH SIMPLE PRODUCTS </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro3">
+                    <p><a href="../projectpages/DNA.html">
+                      TRY TO BUILD THIS CREATIVE DNA HELIX BUILD </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro4">
+                    <p><a href="../projectpages/Glowing_bubble_Light.html">
+                     LEARN AND TRY TO CREATE GLOWING BUBBLE USING THESE EAST INGREDIENTS</a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro5">
+                    <p><a href="../projectpages/glowing.html">
+                      STEP UP YOUR GELATIN MAKING GAME BY MAKING IT GLOWING WITH THESE PROCEDURES </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro6">
+                    <p><a href="../projectpages/lava.html">
+                      TRY CREATING ARTIFICIAL LAVA WHICH CAN HELP YOU FOR YOUR SCHOOL PROJECTS </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro7">
+                    <p><a href="../projectpages/Lifting.html">
+                      SIMPLE LIFTING JACK </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro8">
+                    <p><a href="../projectpages/Magic.html">
+                      IMPRESS YOUR FRIENDS BY CREATING A UNDERWATER FIREWORK WITH US </a>
+                  </p></div>
+                   <div class="flex1 pro9">
+                    <p><a href="../projectpages/Rainbow.html">
+                      LEARN THE EASIET AND FAST WAY TO CREATE RAINBOW </a>
+                  </p>
+                   </div>
+                   <div class="flex1 pro10">
+                    <p><a href="../projectpages/slim.html">
+                      IF YOU LOVE TO PLAY WITH MAGNETS THIS SLIM MAGNET IS FOR YOU </a>
+                  </p>
+                   </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let mybutton = document.getElementById("mybtn");
+        window.onscroll= function(){scrollFunction()};
+        function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    
+      function search() {
+      let filter = document.getElementById('find').value.toUpperCase();
+      let item = document.querySelectorAll('.flex1');
+      let l = document.getElementsByTagName('a');
+      for(var i = 0;i<=l.length;i++){
+      let a=item[i].getElementsByTagName('a')[0];
+      let value=a.innerHTML || a.innerText || a.textContent;
+      if(value.toUpperCase().indexOf(filter) > -1) {
+      item[i].style.display="";
+      }
+      else
+      {
+      item[i].style.display="none";
+      }
+      }
+      }
+    
+    </script>
+</body>
+</html>

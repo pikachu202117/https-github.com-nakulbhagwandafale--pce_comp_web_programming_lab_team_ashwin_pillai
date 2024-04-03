@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: url('diyrbgi.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: -10px 10px 25px black ;
+    background-color: rgb(251, 171, 0,0.6);
+}
+.title{
+    width: 400px;
+    top: 25px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    content: '';
+    position:absolute ;
+    left: 0;
+    height: 3px;
+    width: 363px;
+    background: darkorange;
+    bottom: 0;
+    
+}
+.container form .details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+            
+}
+form .details .input-box{
+    width: calc(100% / 2 - 20px);
+    /*color: orange; text color*/
+}
+.details .input-box input{
+   display: block;
+   font-weight: 500;
+   margin-bottom: 5px;
+   background: transparent;
+}
+.details .input-box input{
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding-left:15px ;
+    font-size: 14px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+form .gender .gtitle{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender .category{
+        display: flex;
+        width: 30%;
+        margin: 14px 0;
+        justify-content: space-between;
+}
+.gender .category label{
+    display: flex;
+    align-items: center;
+}
+.gender .category .dot{
+        height: 18px;
+        width: 18px;
+        background: gainsboro;
+        margin-right: 10px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        transition: all 0.0s ease;
+        cursor: pointer;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two
+{
+background-color: cyan;
+}
+.one:hover ,.two:hover{
+    box-shadow:0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
+}
+form input[type="radio"]{
+    display: none;
+}
+.avatar {
+    position: absolute;
+	z-index: 3;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: 50px;
+	left: 340px;
+    box-shadow: 0 0 5px aqua,
+                0 0 25px aqua;
+}
+.avatar:hover{
+    box-shadow:0 0 5px aqua,
+    0 0 25px aqua,
+    0 0 100px aqua,
+    0 0 200px aqua;
+}
+
+.button1{
+    background-color: cyan;
+    box-shadow: -2px 2px 9px black;
+    border: none;
+    width: 500px;
+    height: 30px;
+    margin-left: 100px;
+    cursor: pointer;
+    border-radius: 20px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+}
+.button1:hover{
+    box-shadow:0 0 5px cyan,
+    0 0 25px rgb(90, 102, 102),
+    0 0 100px cyan,
+    0 0 200px cyan;
+}
+a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03f484;
+    font-size:30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+   /* transition: 0.5s;*/
+    margin-top: 20px;
+    letter-spacing: 4px;
+    width: 350px;
+    height: 30px;
+    margin-left: 100px;
+    padding-left: 150px;
+}
+
+.container a:hover {
+    background: #03f484;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
+}
+
+
+.container a span {
+    position: absolute;
+    display: block;
+}
+
+.container a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03f484);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.container a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03f484);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.container a span:nth-child(3) {
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03f484);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.container a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03f484);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
