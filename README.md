@@ -1,4 +1,3 @@
-# https-github.com-pikachu202117--pce_comp_web_programming_lab_team_ashwin_pillai
 <h1>Welcome to MANOS Platform</h1><br>
 Manos is a platform to falicitate the users to create and share diy projects with step by step diy projects without any coding experience<br><br>
 Team members are:
